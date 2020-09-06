@@ -102,5 +102,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DavuPCVM\DavuPCVM.csproj">
+      <Project>{4b24c5d2-43f1-490e-a656-3c05a8b4ebdf}</Project>
+      <Name>DavuPCVM</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,14 +4,16 @@
                     xmlns:fa="http://schemas.fontawesome.io/icons/">
     <Style x:Key="DirectoryWrapperStyle" TargetType="Grid">
         <Setter Property="Background" Value="#faf0ff"/>
-        <Setter Property="MinHeight" Value="40"></Setter>
+        <Setter Property="MinHeight" Value="30"></Setter>
     </Style>
 
-    <Style x:Key="DirectoryStyle" TargetType="Button">
+    <Style x:Key="DirectoryStyle" TargetType="TextBlock">
         <Setter Property="MaxWidth" Value="75"></Setter>
-        <Setter Property="BorderThickness" Value="0"></Setter>
-        <Setter Property="Foreground" Value="#008b8b"></Setter>
         <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="#008b8b"></Setter>
+        
         <Setter Property="Margin" Value="2"></Setter>
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="Cursor" Value="Hand"></Setter>
@@ -19,25 +21,99 @@
     </Style>
 
 
-    <Style x:Key="PreviousButton" TargetType="Button">
-        <Setter Property="BorderThickness" Value="0"></Setter>
-        <Setter Property="MaxWidth" Value="100"></Setter>
-        <Setter Property="MaxHeight" Value="100"></Setter>
-        <Setter Property="Template">
-            <Setter.Value 
-        </Setter>
-    </Style>
+    
 
-    <Style x:Key="NextButton" TargetType="Button">
-        <Setter Property="BorderThickness" Value="0"></Setter>
-        <Setter Property="MaxWidth" Value="100"></Setter>
-        <Setter Property="MaxHeight" Value="100"></Setter>
-    </Style>
+   
 
     <Style x:Key="BannerWrapperStyle" TargetType="Grid">
-        <Setter Property="Background" Value="Black"></Setter>
+        <Setter Property="Background" Value="LightGray"></Setter>
         <Setter Property="MinHeight" Value="300"></Setter>
         <Setter Property="Margin" Value="20,0"></Setter>
     </Style>
+
+
+    <Style x:Key="NextButton" TargetType="Button">
+        
+        <Setter Property="MaxWidth" Value="100"></Setter>
+        <Setter Property="MaxHeight" Value="100"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid
+                        Name="btnNext"
+                        Width="35"
+                        Height="35"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="2">
+                        <fa:ImageAwesome Icon="ChevronCircleRight"
+                                    Width="32"
+                                    Height="32"
+                                    Foreground="Black"
+                                    Name="IconNext"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         ></fa:ImageAwesome>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="IconNext"
+                                    Property="Foreground"
+                                    Value="White"
+                                    >
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="PreviousButton" TargetType="Button">
+        <Setter Property="MaxWidth" Value="100"></Setter>
+        <Setter Property="MaxHeight" Value="100"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid
+                        Name="btnPrevious"
+                        Width="35"
+                        Height="35"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="2">
+                        <fa:ImageAwesome Icon="ChevronCircleLeft"
+                                    Width="32"
+                                    Height="32"
+                                    Foreground="Black"
+                                    Name="IconPrevious"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         ></fa:ImageAwesome>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="IconPrevious"
+                                    Property="Foreground"
+                                    Value="White"
+                                    >
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ImageItemStyle" TargetType="Image"></Style>
+    <Style x:Key="ItemNameStyle" TargetType="TextBlock"></Style>
+    <Style x:Key="ItemPriceStyle" TargetType="TextBlock"></Style>
 
 </ResourceDictionary>
