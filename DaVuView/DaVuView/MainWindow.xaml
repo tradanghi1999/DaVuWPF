@@ -1,0 +1,52 @@
+﻿<Window x:Class="DaVuView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DaVuView"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:fa="http://schemas.fontawesome.io/icons/">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MainWindowStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2"
+                  Width="{Binding ActualWidth, RelativeSource = {RelativeSource AncestorType = {x:Type Window}}}"
+                  HorizontalAlignment="Center"
+                  Style="{StaticResource DirectoryWrapperStyle}">
+                <Button 
+                    Style="{StaticResource DirectoryStyle}"
+                    Content="Danh Mục Pro"></Button>
+
+            </Grid>
+            <Grid Grid.Row="3"
+                  Style="{StaticResource BannerWrapperStyle}">
+                <Button 
+                        HorizontalAlignment="Left"
+                        Content="Previous"
+                        Style="{StaticResource PreviousButton}"></Button>
+                <Image x:Name="Banner"></Image>
+                <Button 
+                        HorizontalAlignment="Right"
+                        Content="Next"
+                        Style="{StaticResource NextButton}"></Button>
+                
+            </Grid>
+        </Grid>
+        
+        
+    </ScrollViewer>
+</Window>
